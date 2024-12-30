@@ -39,8 +39,6 @@ NODE_ENV=development
 - `NEXT_PUBLIC_API_URI_V2`: URL of the API V2.
 - `NODE_ENV`: If set to production, the application will run in production mode. If set to development, the application will run in development.
 
-To Run this project you need [JashCeramic Backend](https://github.com/skentinodev/jash-ceramic-backend)
-
 **4. Run the Development Server:**
 
 ```bash
@@ -56,3 +54,81 @@ bun dev
 **5. View the Application:**
 
 Open your browser and navigate to `http://localhost:3000` to see the application in action.
+
+## Project Structure
+
+```lua
+.project-root
+├── .github
+├── .husky
+├── .next
+├── .vscode
+├── node_modules
+├── public
+├── src
+│   ├── app
+│   │   ├── (auth)
+│   │   ├── (dashboard)
+│   │   ├── context
+│   │   ├── AuthLayout.jsx
+│   │   ├── globals.css
+│   │   ├── layout.jsx
+│   │   └── robots.js
+│   ├── components
+│   ├── hooks
+│   ├── lib
+│   │   ├── api.js
+│   │   └── utils.js
+│   └── utils
+├── .env.example
+├── .env.local
+├── .eslintignore
+├── .eslintrc.json
+├── .gitignore
+├── .huskyrc
+├── .lintstagedrc
+├── .prettierignore
+├── .prettierrc
+├── components.json
+├── ecosystem.config.js
+├── jsconfig.json
+├── next.config.js
+├── package-lock.json
+├── package.json
+├── postcss.config.js
+├── README.md
+└── tailwind.config.js
+```
+
+**Authorization and Dashboard:**
+
+- (auth) and (dashboard) folders under app for modular route grouping and context-specific pages.
+
+**Global Context:**
+
+- context directory for state management or React context providers.
+
+**Hooks:**
+
+- hooks folder for custom React hooks.
+
+**Environment Configuration:**
+
+- `.env.example` for reference and .env.local for local environment variables.
+
+**Ecosystem Configuration:**
+
+- `ecosystem.config.js` for PM2 (or similar tools) to manage the app's production/development environment.
+
+**Tailwind CSS:**
+
+- `tailwind.config.js` for styling customization.
+
+**API and Utility Layer:**
+
+- `lib/api.js` for managing API calls.
+- `lib/utils.js` and utils/ for helper functions.
+
+**Code Quality and Formatting:**
+
+- ESLint, Prettier, and Husky configuration files to enforce consistent code quality.
